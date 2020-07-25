@@ -43,3 +43,5 @@ repo5 (branchE)
 2. Install [janet](https://janet-lang.org/).
 3. Run `just build`.
 4. Copy your new binary in `bin` to a location in your `$PATH`.
+
+Or just [download the latest release](https://github.com/corasaurus-hex/pull-all/releases).
