@@ -4,7 +4,7 @@ build: clean
 	jpm build
 	mkdir -p bin
 	mv build/pull-all bin/pull-all.{{os()}}.{{arch()}}
-    gzip bin/pull-all.{{os()}}.{{arch()}}
+	gzip bin/pull-all.{{os()}}.{{arch()}}
 
 clean:
 	rm -rf build/*
