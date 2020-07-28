@@ -51,15 +51,12 @@
 (defn git-project? [path]
   (is-dir? (p/join path ".git")))
 
-(defn- search-directories* [path depth]
+(defn- search-directories [path depth]
   (if (> depth 0)
-    (array/push (mapcat |(search-directories* $0 (- depth 1))
+    (array/push (mapcat |(search-directories $0 (- depth 1))
                         (visible-dirs path))
                 path)
     @[path]))
-
-(defn search-directories [path depth]
-  (search-directories* path depth))
 
 (defn git-projects [path depth]
   (filter git-project? (search-directories path depth)))
