@@ -33,9 +33,9 @@
      (os/stat path :mode)))
 
 (defn dirs [path]
-  (filter
-   is-dir?
-   (os/dir path)))
+  (->> (os/dir path)
+    (map |(p/join path $0))
+    (filter |(is-dir? $0))))
 
 (defn hidden? [path]
   (string/has-prefix?
