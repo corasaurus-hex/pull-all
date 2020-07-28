@@ -10,13 +10,13 @@
 (defn success [msg]
   (string (ansi :success) msg (ansi :reset)))
 
-(defn error [msg]
+(defn err [msg]
   (string (ansi :error) msg (ansi :reset)))
 
 (defn color-result [res msg]
   (if (= res :success)
     (success msg)
-    (error msg)))
+    (err msg)))
 
 (defn indent
   [text level]
